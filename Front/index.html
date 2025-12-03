@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lixeira Inteligente</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+
+<body>
+  <header class="header">
+    <div class="container">
+      <h1><i class="fas fa-recycle"></i> Monitoramento da Lixeira</h1>
+      <span id="statusApi" class="status-offline"><i class="fas fa-circle"></i> Desconectado</span>
+    </div>
+  </header>
+
+  <main class="main container">
+    <section class="card central">
+      <div class="card-header">
+        <h2><i class="fas fa-trash"></i> Lixeira - Status Atual</h2>
+      </div>
+      <div class="card-body lixeira-monitor">
+        <div id="tampaStatus" class="tampa-status tampa-fechada">
+          <i class="fas fa-lock"></i>
+          <span>Tampa Fechada</span>
+        </div>
+
+        <div class="progress-bar">
+          <div id="progressFill" class="progress-fill progress-normal" style="width: 0%"></div>
+        </div>
+
+        <p id="nivelText" class="nivel-text">Carregando dados...</p>
+        <p id="statusText" class="status-label status-normal">Status: —</p>
+      </div>
+    </section>
+
+    <section class="card info">
+      <div class="card-header">
+        <h3><i class="fas fa-info-circle"></i> Informações</h3>
+      </div>
+      <div class="card-body">
+        <p><strong>Local:</strong> <span id="local">---</span></p>
+        <p><strong>Capacidade:</strong> <span id="capacidade">---</span></p>
+        <p><strong>Tampa:</strong> <span id="statusTampa">Fechada</span></p>
+        <p><strong>Atualizado em:</strong> <span id="atualizadoEm">---</span></p>
+        <p><strong>Distância:</strong> <span id="distancia">---</span> cm</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>&copy; Kapdf 2025 | Monitoramento de Resíduos</p>
+  </footer>
+
+  <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-database-compat.js"></script>
+  
+  <script src="script.js"></script>
+</body>
+</html>
